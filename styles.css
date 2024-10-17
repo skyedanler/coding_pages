@@ -94,3 +94,7 @@ nav a {
 nav a:visited {
     color: var(--font-color);
 }
+
+footer {
+    background-color: var(--secondary-color);
+}

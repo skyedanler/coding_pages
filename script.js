@@ -12,3 +12,7 @@ if (document.body.classList.contains('christmas')) {
 
 imgElement1.src = imgUrl;
 imgElement2.src = imgUrl;
+
+const currentYear = new Date().getFullYear();
+
+document.getElementById('copyright').innerHTML = `Skye Danler ${currentYear} &copy`
