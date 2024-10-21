@@ -24,7 +24,29 @@
             </nav>
         </header>
         <div class="rest-of-body">
-            <p>Hello friends!</p>
+            <p>Hello friends! Thank you for stumbling upon my page. Here, you'll be able to see my progress and learning journey with code.</p>
+            <h2>Codecademy Courses I've Completed:</h2>
+            <ul id="codecademy"></ul>
+            <script>
+                const printCodecademyList = (list) => {
+                    listContainer = document.getElementById('codecademy');
+                    let listhtml = ''
+                    list.forEach(element => {
+                        listhtml += `<li>${element}</li>`
+                    });
+                    listContainer.innerHTML = listhtml;
+                }
+
+                async function fetchCodecademyList() {
+                    const response = await fetch('./codecademy.json');
+                    const list = await response.json();
+                    return list;
+                }
+
+                fetchCodecademyList().then(codecademy => printCodecademyList(codecademy));
+
+            </script>
+            
         </div>
         <footer>
             <p id="copyright"></p>
